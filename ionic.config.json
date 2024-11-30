@@ -1,0 +1,7 @@
+{
+  "name": "MangxoUserData",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
