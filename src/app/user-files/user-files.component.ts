@@ -1,9 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { IonList, IonItem, IonButton } from "@ionic/angular/standalone";
+import { IonList, IonItem, IonButton, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonLabel, IonThumbnail, IonIcon } from "@ionic/angular/standalone";
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { PhotoService } from '../photo.service';
+import { documentOutline, downloadOutline } from 'ionicons/icons';
+import { addIcons } from 'ionicons';
 
 
 @Component({
@@ -11,13 +13,15 @@ import { PhotoService } from '../photo.service';
   templateUrl: './user-files.component.html',
   styleUrls: ['./user-files.component.scss'],
   standalone: true,
-  imports: [IonButton, IonItem, IonList, CommonModule, HttpClientModule]
+  imports: [IonIcon, IonLabel, IonCardContent, IonCardTitle, IonCardSubtitle, IonCardHeader, IonCard, IonButton, IonItem, IonList, CommonModule, HttpClientModule]
 })
 export class UserFilesComponent {
   @Input() selectedUser: string = '';
   @Input() files: string[] = [];
 
-  constructor(private http: HttpClient, private photoService: PhotoService) {}
+  constructor(private http: HttpClient, private photoService: PhotoService) {
+    addIcons({ documentOutline, downloadOutline });
+  }
 
   downloadFile(file: string) {
     const downloadUrl = `http://localhost:3001/download/${this.selectedUser}/${file}`;

@@ -1,20 +1,26 @@
-<div *ngIf="selectedUser">
-  <h2>Archivos de {{ selectedUser }}</h2>
-  <ion-list>
-    <ion-item *ngFor="let file of files">
-      {{ file }}
-      <ion-button slot="end" (click)="downloadFile(file)">Descargar</ion-button>
-    </ion-item>
-  </ion-list>
+<ion-card *ngIf="selectedUser">
+  <ion-card-header>
+    <ion-card-title> {{ selectedUser }}</ion-card-title>
+    <ion-card-subtitle>Archivos Guardados</ion-card-subtitle>
+  </ion-card-header>
 
-  <!-- Botón para tomar una foto -->
-  <ion-item>
-    <ion-button expand="block" (click)="takeAndSavePhoto()">Tomar Foto</ion-button>
-  </ion-item>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let file of files">
+        <ion-label> {{ file }} </ion-label>
+        <ion-button class="downloadButton" slot="end" shape="round" fill="clear" (click)="downloadFile(file)">
+          <ion-icon name="download-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
 
-  <!-- Botón para tomar una foto -->
-  <ion-item>
-    <input type="file" #fileInput />
-    <ion-button expand="block" (click)="onFileSelect(fileInput)">Subir Archivo</ion-button>
-  </ion-item>
-</div>
+  <ion-button expand="block" (click)="takeAndSavePhoto()" fill="clear">Subir INE</ion-button>
+</ion-card>
+
+<ion-item>
+  <input type="file" #fileInput />
+  <ion-button expand="block" (click)="onFileSelect(fileInput)" fill="clear">
+    <ion-icon name="download-outline"></ion-icon>
+  </ion-button>
+</ion-item>

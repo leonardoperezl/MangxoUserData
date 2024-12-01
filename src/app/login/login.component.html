@@ -1,21 +1,26 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Iniciar Sesión</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-card>
+  <ion-img
+    src="../../assets/MangxoLogo.png"
+    alt="MangxoLogo"
+  ></ion-img>
+  <p>Construye ahora,</p>
+  <p>paga despues</p>
 
-<ion-content class="ion-padding">
-  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-    <ion-item>
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input type="text" [(ngModel)]="username" name="username" required></ion-input>
-    </ion-item>
+  <ion-card-header>
+    <ion-card-title>Iniciar Sesion</ion-card-title>
+  </ion-card-header>
 
-    <ion-item>
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
-    </ion-item>
+  <ion-card-content>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <ion-item>
+        <ion-input label="Usuario" label-placement="floating" placeholder="Ej: leonardoP" type="text" [(ngModel)]="username" name="username" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-input label="Contraseña" label-placement="floating" placeholder="Ej: 123456" type="password" [(ngModel)]="password" name="password" required></ion-input>
+      </ion-item>
 
-    <ion-button expand="block" type="submit" [disabled]="!loginForm.form.valid">Ingresar</ion-button>
-  </form>
-</ion-content>
+      <ion-button class="logInButton" expand="block" type="submit" [disabled]="!loginForm.form.valid">Ingresar</ion-button>
+    </form>
+  </ion-card-content>
+</ion-card>

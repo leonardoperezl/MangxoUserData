@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { IonList, IonItem, IonButton, IonInput} from "@ionic/angular/standalone";
+import { IonList, IonItem, IonButton, IonInput, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonLabel, IonCard, IonThumbnail, IonIcon } from "@ionic/angular/standalone";
 import { CommonModule } from '@angular/common';
 import { UserFilesComponent } from '../user-files/user-files.component';
+import { addIcons } from 'ionicons';
+import { triangle, ellipse, square, personCircle, barChartOutline, addCircleOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss'],
   standalone: true,
-  imports: [IonInput, IonButton, IonItem, IonList, HttpClientModule, CommonModule, UserFilesComponent], // Importamos HttpClientModule aquí
+  imports: [IonCard, IonLabel, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonInput, IonButton, IonItem, IonList, IonThumbnail, IonIcon, HttpClientModule, CommonModule, UserFilesComponent], // Importamos HttpClientModule aquí
 })
 export class UserListComponent {
   users: string[] = [];
@@ -17,7 +19,9 @@ export class UserListComponent {
   selectedUser: string = '';
   showFiles: boolean = false;  // Para controlar la visibilidad
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    addIcons({ personCircle, barChartOutline, addCircleOutline });
+  }
 
   async ngOnInit() {
     await this.loadUsers();

@@ -1,13 +1,19 @@
 <ion-item>
   <input type="file" #fileInput accept=".csv" />
-  <ion-button expand="block" (click)="uploadCSV(fileInput)">
-    Subir Archivo CSV
+  <ion-button expand="block" (click)="uploadCSV(fileInput)" shape="round" fill="clear">
+    <ion-icon name="download-outline"></ion-icon>
   </ion-button>
 </ion-item>
 
-<div *ngIf="imageUrl">
-  <h2>Gráfica Generada:</h2>
-  <img [src]="imageUrl" alt="Gráfica Generada" style="max-width: 100%; border: 1px solid #ccc;" />
-</div>
+<ion-card *ngIf="imageUrl">
+  <ion-card-header>
+    <ion-card-title>Gráfica Generada</ion-card-title>
+    <ion-card-subtitle>Ingresos vs Egresos</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <img [src]="imageUrl" alt="Gráfica Generada" style="max-width: 100%; border: 1px solid #ccc;" />
+  </ion-card-content>
+</ion-card>
 
 

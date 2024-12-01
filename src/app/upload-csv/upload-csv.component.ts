@@ -1,19 +1,24 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IonItem, IonButton } from "@ionic/angular/standalone";
+import { IonItem, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonIcon } from "@ionic/angular/standalone";
 import { CommonModule } from '@angular/common';
+
+import { addIcons } from 'ionicons';
+import { downloadOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-upload-csv',
   templateUrl: './upload-csv.component.html',
   styleUrls: ['./upload-csv.component.scss'],
   standalone: true,
-  imports: [IonButton, IonItem, CommonModule]
+  imports: [IonIcon, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonCard, IonButton, IonItem, CommonModule]
 })
 export class UploadCsvComponent {
   imageUrl: string | null = null;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    addIcons({ downloadOutline });
+  }
 
   async uploadCSV(fileInput: HTMLInputElement | null) {
     if (!fileInput?.files?.length) {
