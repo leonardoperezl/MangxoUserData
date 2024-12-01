@@ -1,0 +1,23 @@
+<ion-item *ngIf="!showFiles">
+  <ion-input placeholder="Nombre del usuario" #newUser></ion-input>
+  <ion-button expand="block" 
+              (click)="createUser(newUser.value, newUser)">
+    Crear Usuario
+  </ion-button>
+</ion-item>
+
+<ion-list *ngIf="!showFiles">
+  <ion-item *ngFor="let user of users" (click)="loadFiles(user)">
+    {{ user }}
+  </ion-item>
+</ion-list>
+
+<!-- Componente user-files -->
+<app-user-files
+  *ngIf="showFiles"
+  [selectedUser]="selectedUser"
+  [files]="files"
+></app-user-files>
+
+<ion-button *ngIf="showFiles" (click)="closeFiles()">Volver a la lista</ion-button>
+

@@ -1,0 +1,57 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "password"
+    },
+    {
+      "id": "7901",
+      "username": "user",
+      "password": "password"
+    },
+    {
+      "id": "a300",
+      "username": "asdfasdfasdf",
+      "password": "asdfasdfasdf"
+    },
+    {
+      "id": "dda3",
+      "username": "adfsadf",
+      "password": "1211221"
+    },
+    {
+      "id": "e823",
+      "username": "JUANITO SA DE CV"
+    },
+    {
+      "id": "5f3d",
+      "username": "JUANITO SA DE CV"
+    },
+    {
+      "id": "c303",
+      "username": "Juanito SA DE CV"
+    },
+    {
+      "id": "0fbf",
+      "username": "JUANITO SA DE CV"
+    },
+    {
+      "id": "c8f3",
+      "username": "JUANITO SA DE CV"
+    },
+    {
+      "id": "b318",
+      "username": "Juanito"
+    },
+    {
+      "id": "a55f",
+      "username": "adfasdfasdf"
+    }
+  ]
+}
